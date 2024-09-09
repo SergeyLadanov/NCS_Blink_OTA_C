@@ -8,3 +8,4 @@ tests:
     harness: led
     integration_platforms:
       - frdm_k64f
+
