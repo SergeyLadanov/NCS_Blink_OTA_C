@@ -121,6 +121,10 @@ static void bt_receive_cb(struct bt_conn *conn, const uint8_t *const data,
 
 	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, ARRAY_SIZE(addr));
 
+
+	/****SEND DATA EXAMPLE*****/
+	// bt_nus_send(conn, data, len);
+
 	// LOG_INF("Received data from: %s", addr);
 
 	// for (uint16_t pos = 0; pos != len;) {

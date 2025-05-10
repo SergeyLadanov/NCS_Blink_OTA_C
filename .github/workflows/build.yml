@@ -1,0 +1,26 @@
+name: Build NRF SDK project
+
+on:
+  push:
+    branches: '*'
+  pull_request:
+    branches: '*'
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Build
+        uses: embedd-actions/nrf-connect-sdk-ci@v2.3.0
+        with:
+          board: nrf52840dk_nrf52840
+          build_dir: build
+
+      - name: Check build result
+        run: ls build/zephyr
